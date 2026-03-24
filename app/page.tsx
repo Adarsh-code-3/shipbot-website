@@ -66,6 +66,7 @@ function Nav() {
     { href: "#templates", label: "Templates" },
     { href: "#pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
+    { href: "/pitch-deck", label: "Pitch Deck" },
   ]
 
   return (
@@ -85,7 +86,7 @@ function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="#pricing" className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white text-sm font-semibold hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-300 hover:-translate-y-0.5">
+          <a href="https://t.me/AdarshShipBot" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white text-sm font-semibold hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-300 hover:-translate-y-0.5">
             Get Started <ArrowRight className="w-4 h-4" />
           </a>
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-white/60 hover:bg-white/[0.06] transition-colors min-h-[44px] min-w-[44px]">
@@ -99,7 +100,7 @@ function Nav() {
           {links.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium text-white/60 hover:text-white rounded-lg hover:bg-white/[0.04] transition-colors">{l.label}</a>
           ))}
-          <a href="#pricing" onClick={() => setMobileOpen(false)} className="block mt-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white text-sm font-semibold text-center">Get Started</a>
+          <a href="https://t.me/AdarshShipBot" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="block mt-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white text-sm font-semibold text-center">Get Started</a>
         </div>
       )}
     </nav>
@@ -141,7 +142,7 @@ function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10" style={{ opacity: 0, animation: "fadeUp 0.8s ease-out 650ms forwards" }}>
-          <a href="#pricing" className="group flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold text-base shadow-xl shadow-blue-500/20 hover:shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all duration-400 hover:-translate-y-1">
+          <a href="https://t.me/AdarshShipBot" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold text-base shadow-xl shadow-blue-500/20 hover:shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all duration-400 hover:-translate-y-1">
             Start Building Free <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a href="#how" className="flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] text-white/70 font-semibold text-base hover:bg-white/[0.08] hover:text-white transition-all duration-300">
@@ -459,6 +460,7 @@ function Pricing() {
       desc: "Perfect for trying ShipBot and building your first app",
       features: ["1 app build per month", "All 20+ templates", "GitHub repo included", "Vercel deployment", "Dark mode & responsive", "Community support"],
       cta: "Start Free",
+      href: "https://t.me/AdarshShipBot",
       highlighted: false,
       icon: User,
     },
@@ -469,6 +471,7 @@ function Pricing() {
       desc: "For founders and creators who ship fast and iterate often",
       features: ["Unlimited app builds", "Unlimited iterations", "Database provisioning", "Priority build queue", "Custom domain support", "Email support", "All future templates"],
       cta: "Go Pro",
+      href: "https://t.me/AdarshShipBot?start=pro",
       highlighted: true,
       icon: Rocket,
     },
@@ -479,6 +482,7 @@ function Pricing() {
       desc: "For agencies and teams building at scale",
       features: ["Everything in Pro", "White-label builds", "Client management portal", "API access", "Dedicated support", "SLA guarantee", "Custom templates", "Team collaboration"],
       cta: "Contact Us",
+      href: "https://t.me/adwait_02",
       highlighted: false,
       icon: Building2,
     },
@@ -527,13 +531,13 @@ function Pricing() {
                     </div>
                   ))}
                 </div>
-                <button className={`w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 min-h-[48px] ${
+                <a href={tier.href} target="_blank" rel="noopener noreferrer" className={`w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 min-h-[48px] flex items-center justify-center text-center ${
                   tier.highlighted
                     ? "bg-gradient-to-r from-blue-600 to-violet-600 text-white hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:-translate-y-0.5"
                     : "bg-white/[0.06] text-white/60 hover:bg-white/[0.1] hover:text-white border border-white/[0.08]"
                 }`}>
                   {tier.cta}
-                </button>
+                </a>
               </div>
             </Reveal>
           ))}
@@ -613,8 +617,11 @@ function FinalCTA() {
             Your next app is one message away. Start building for free, no credit card required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-            <a href="#pricing" className="group flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold text-base shadow-xl shadow-blue-500/20 hover:shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all duration-400 hover:-translate-y-1">
+            <a href="https://t.me/AdarshShipBot" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold text-base shadow-xl shadow-blue-500/20 hover:shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all duration-400 hover:-translate-y-1">
               Start Building Free <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a href="/pitch-deck" className="flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] text-white/70 font-semibold text-base hover:bg-white/[0.08] hover:text-white transition-all duration-300">
+              View Pitch Deck <ArrowUpRight className="w-5 h-5" />
             </a>
           </div>
           <p className="mt-6 text-xs text-white/15 font-mono">DESCRIBE IT. SHIP IT. OWN IT.</p>
